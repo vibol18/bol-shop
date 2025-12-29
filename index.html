@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sna Shop</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+<!-- ================= NAVBAR ================= -->
+<nav class="fixed top-0 left-0 w-full bg-white shadow z-50">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+    <h1 class="text-2xl font-extrabold text-red-500">
+      Sna <span class="text-orange-500">Shop</span>
+    </h1>
+
+    <ul class="hidden md:flex gap-8 font-medium">
+      <li><a class="hover:text-blue-500 transition" href="#">Home</a></li>
+      <li><a class="hover:text-blue-500 transition" href="#">Contact</a></li>
+      <li><a class="hover:text-blue-500 transition" href="#">Blog</a></li>
+      <li><a class="hover:text-blue-500 transition" href="#">About</a></li>
+    </ul>
+
+    <div class="flex items-center gap-4">
+      <button id="open" class="relative font-semibold hover:text-blue-500">
+        🛒 Cart
+      </button>
+      <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition">
+        Register
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="pt-28"></div>
+
+<!-- ================= SEARCH ================= -->
+<div class="max-w-7xl mx-auto px-6 mb-8">
+  <input id="search-input"
+    type="text"
+    placeholder="🔍 Search product..."
+    class="w-full p-4 rounded-xl shadow focus:outline-none focus:ring-2 focus:ring-blue-400"
+  />
+</div>
+
+
+<section class="max-w-7xl mx-auto px-6 mb-10">
+  <h2 class="text-2xl font-bold mb-5">Categories</h2>
+  <div class="flex gap-4 flex-wrap">
+    <button class="px-6 py-2 bg-white shadow rounded-full hover:bg-blue-500 hover:text-white transition">Shoes</button>
+    <button class="px-6 py-2 bg-white shadow rounded-full hover:bg-blue-500 hover:text-white transition">Bags</button>
+    <button class="px-6 py-2 bg-white shadow rounded-full hover:bg-blue-500 hover:text-white transition">Clothes</button>
+  </div>
+</section>
+
+
+<section class="max-w-7xl mx-auto px-6 mb-16">
+  <h2 class="text-2xl font-bold mb-6">Products</h2>
+
+  <div id="products" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <!-- JS inject products here -->
+  </div>
+</section>
+
+<div id="detailModal"
+     class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+
+  <div class="bg-white w-[90%] max-w-md p-6 rounded-2xl shadow-xl relative">
+
+    <button id="closeDetail"
+            class="absolute top-3 right-3 text-gray-500 hover:text-red-500">
+      ✕
+    </button>
+
+    <img id="detailImage"
+         class="w-full h-52 object-contain bg-gray-50 rounded-lg mb-4">
+
+    <span id="detailCategory"
+          class="inline-block bg-blue-500 text-white text-xs px-3 py-1 rounded-full mb-2">
+    </span>
+
+    <h3 id="detailTitle" class="text-xl font-bold mb-2"></h3>
+
+    <p id="detailPrice" class="text-green-600 text-xl font-bold mb-3"></p>
+
+    <p id="detailDescription" class="text-gray-600 text-sm"></p>
+
+    <button id="detailAddToCart"
+            class="w-full mt-5 bg-green-500 hover:bg-green-600
+                   text-white py-2 rounded-lg transition">
+      Add to Cart
+    </button>
+
+  </div>
+</div>
+<div id="cart" class="fixed right-0 top-0 h-full w-80 bg-white shadow-xl p-6 hidden">
+  <h2 class="text-2xl font-bold mb-6 border-b pb-3">🛒 Your Cart</h2>
+
+  <div class="space-y-4">
+    <div class="border p-3 rounded-lg">
+      <p class="font-semibold">Product Name</p>
+      <p class="text-sm text-gray-500">$20</p>
+    </div>
+  </div>
+
+  <button id="close" class="mt-6 w-full bg-red-500 hover:bg-red-600 text-white py-3 rounded-lg transition">
+    Close Cart
+  </button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
