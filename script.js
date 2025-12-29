@@ -3,6 +3,12 @@ const cartEl = document.getElementById("cart");
 const btnOpen = document.getElementById("open");
 const closeBtn = document.getElementById("close");
 const searchInput = document.getElementById("search-input");
+btnOpen.addEventListener("click",function(){
+  cartEl.style.display ="block"
+})
+closeBtn.addEventListener("click",function(){
+  cartEl.style.display ="none"
+})
 
 const detailModal = document.getElementById("detailModal");
 const closeDetail = document.getElementById("closeDetail");
